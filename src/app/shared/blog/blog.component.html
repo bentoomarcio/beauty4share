@@ -1,0 +1,12 @@
+<section class="blog-component">
+  <div class="row">
+    <div (click)="changeBlog($event)" *ngFor="let blog of blogs; let index = index;" class="col-l4 col-m6 col-s12" [attr.data-index]="index">      
+      <app-blog-box [category]="blog.category" [title]="blog.title" [background]="blog.image"></app-blog-box>
+    </div>
+    <div *ngIf="this.route.url.indexOf('blog') < 0" class="row margin-t50">
+      <div class="col text-center">
+        <app-button [icon]="'add_circle_outline'" [route]="'blog-interno'" [text]="'MAIS POSTS'"></app-button>
+      </div>
+    </div>
+  </div>
+</section>

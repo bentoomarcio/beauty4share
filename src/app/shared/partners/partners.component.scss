@@ -1,0 +1,37 @@
+@import '../../assets/scss/config';
+
+.partners-component {
+  @extend %background-b4s-pink;
+  box-sizing: border-box;
+  align-items: center;
+  padding: 40px 0;
+  flex-wrap: wrap;
+  display: flex;
+
+  .container-logo {
+    justify-content: space-around;
+    box-sizing: border-box;
+    align-items: center;    
+    padding: 40px;
+    display: flex;    
+
+    .image { max-width: 100% }
+  }
+}
+
+@include respond-to('mobile') {
+  .partners-component { flex-direction: column }
+}
+
+@include respond-to('tablet') {
+  .partners-component {
+    flex-direction: row;    
+    .container-logo { width: 50% }
+  }
+}
+
+@include respond-to('desktop') {
+  .partners-component {
+    .container-logo { width: calc(100%/6) }
+  }
+}

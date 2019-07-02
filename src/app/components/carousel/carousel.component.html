@@ -1,0 +1,24 @@
+<section class="carousel-component">
+  <app-header></app-header>
+  <div class="carousel-container" *ngIf="array_carousel">
+    <ngu-carousel #carousel_view [inputs]="carousel_config" [dataSource]="array_carousel">
+      <div class="carousel-slide" *nguCarouselDef="let slide; let i = index;" [ngStyle]="{ backgroundImage: 'url(' + slide.image + ')'}">
+        <div class="carousel-tile">
+          <div class="container-content">
+            <p *ngIf="slide.extra" class="text text-extra"> {{ slide.extra }} </p>
+            <p *ngIf="slide.title" class="text text-title"> {{ slide.title }} </p> 
+            <p *ngIf="slide.subtitle" class="text text-subtitle"> {{ slide.subtitle }} </p>
+            <div class="container-button">
+              <app-button *ngIf="slide.button" [icon]="icons[slide.button.type]" [route]="slide.button.link" [text]="slide.button.text"></app-button>          
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="carousel-points" NguCarouselPoint>
+        <button [ngClass]="{ 'button-inactive': carousel_view.isFirst }" class="button button-prev" NguCarouselPrev> <mat-icon class="icon">chevron_left</mat-icon> </button>
+        <li class="points-item" *ngFor="let i of carousel_view.pointNumbers; let i = index;" [class.active]="i == carousel_view.activePoint" (click)="carousel_view.moveTo(i)"></li>
+        <button [ngClass]="{ 'button-inactive': carousel_view.isLast }" class="button button-next" NguCarouselNext> <mat-icon class="icon">chevron_right</mat-icon> </button>
+      </ul>
+    </ngu-carousel>
+  </div>
+</section>

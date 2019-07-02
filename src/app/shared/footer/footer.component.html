@@ -1,0 +1,97 @@
+<section class="footer-component">
+
+  <div class="row">
+    <div class="col-11 col-center">
+        <div class="row">
+          <div class="col-l5 col-m12 col-s12 container-sign">
+            <p class="text text-bold text-title text-b4s-white text-large">CADASTRE-SE NA BEAUTY4SHARE</p>
+            <p class="text text-content text-b4s-white text-medium">Entre para a nossa lista e tenha acesso a conteúdos e descontos exclusivos.</p>
+          </div>
+          <div class="col-right col-l6 col-m12 col-s12 container-email">
+            <div class="row">        
+              <div class="col-s8 col-m9 col-l10">
+                <form [formGroup]="formEmail">
+                  <mat-form-field appearance="outline">
+                    <mat-label class="text-bold">Digite seu e-mail aqui</mat-label>
+                    <input formControlName="inputEmail" matInput placeholder="Endereço de e-mail">
+                    <mat-error *ngIf='formEmail.controls["inputEmail"].errors && formEmail.controls["inputEmail"].touched'>Por favor, insira seu e-mail corretamente</mat-error>        
+                  </mat-form-field>
+                </form>
+              </div>
+              <div class="col-s4 col-m3 col-l2 container-button">
+                <button (click)="sendEmail()" [disabled]="formEmail.invalid" class="button text-bold">CADASTRAR</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="row row-around text-b4s-white">
+          <div class="col-12">
+            <div class="row container-contato">
+                <div class="col-s12 col-m6 col-l4 contato-item">
+                  <div class="row contato-row">
+                    <p class="text-large text-bold">ENDEREÇO</p>
+                  </div>
+                  <div class="row contato-row">
+                    <p class="text-medium">Rua José de Freitas Guimarães, 60</p>
+                  </div>
+                  <div class="row contato-row">
+                    <p class="text-medium">Pacaembu | CEP: 01237-010</p>
+                  </div>
+                  <div class="row contato-row">
+                    <p class="text-medium">São Paulo - SP | Mapa</p>
+                  </div>
+                </div>
+                
+                <div class="col-s12 col-m6 col-l4 contato-item">
+                    <div class="row contato-row">
+                      <p class="text-large text-bold">CONTATO</p>
+                    </div>
+                    <div class="row contato-row">
+                      <p class="text-medium">E-mail: contato@beauty4share.com.br</p>
+                    </div>
+                    <div class="row contato-row">
+                      <p class="text-medium">Telefone: (11) 98982-3495</p>
+                    </div>
+                    <div class="row contato-row">
+                      <p class="text-medium">WhatsApp: (11) 98230-4824</p>
+                    </div>
+                </div>
+            
+                <div class="col-s12 col-m12 col-l4 contato-item">
+                  <div class="row contato-row">
+                    <p class="text-large text-bold">SIGA A GENTE</p>
+                  </div>
+                  <div class="row contato-row">
+                    <div class="col-s8">
+                      <div class="row">
+                        <div class="col-3">
+                          <a href="https://www.facebook.com/Beauty4Share-853638298149617/" target="_blank"> <img src="http://beauty4share.com.br/wp-content/themes/html5blank-stable/img/faceico.png" alt="faceb4s"> </a>
+                        </div>
+                        <div class="col-3">
+                          <a href="https://br.pinterest.com/beauty4share/" target="_blank"><img src="http://beauty4share.com.br/wp-content/themes/html5blank-stable/img/pinterestico.png" alt="pinterestb4s"></a>
+                        </div>
+                        <div class="col-3">
+                          <a href="http://instagram.com/beauty_4_share" target="_blank"><img src="http://beauty4share.com.br/wp-content/themes/html5blank-stable/img/instaico.png" alt="instab4s"></a>
+                        </div>
+                        <div class="col-3">
+                          <a href="https://www.youtube.com/channel/UCcv-WxQlKWUGCmWTK1d1TQA" target="_blank"><img src="http://beauty4share.com.br/wp-content/themes/html5blank-stable/img/ytico.png" alt="ytb4s"></a>
+                        </div>
+                      </div>
+                    </div>                    
+                  </div>
+                </div>
+            </div>
+          </div>
+          
+        </div>
+      
+        <div class="row text-b4s-white">
+          <div class="col-12">
+            <p class="text-medium">&copy; Beauty4Share  -  Escola de Infuenciadores da Beleza. Todos os direitos reservados.  #Beauty4Share  #InfluenciadoresdaBeleza</p>      
+          </div>
+        </div>
+    </div>
+  </div>
+
+</section>

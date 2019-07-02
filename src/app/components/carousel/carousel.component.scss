@@ -1,0 +1,154 @@
+@import '../../assets/scss/config';
+
+.carousel-component {
+  position: relative;
+  z-index: 0;
+
+  .carousel-points {
+    justify-content: center;    
+    align-items: center;
+    position: absolute;
+    display: flex;
+    bottom: 20px;
+    width: 100%;
+
+    .button {
+      $size: 40px;
+
+      background: transparent;
+      cursor: pointer;      
+      outline: none;
+      height: $size;
+      border: none;
+      width: $size;
+      padding: 0;
+
+      &-inactive {
+        cursor: default;
+        opacity: .5;
+      }
+
+      .icon {        
+
+        @extend %text-b4s-white;
+        
+        font-size: $size;
+        height: $size;
+        width: $size;
+      }
+    }
+
+    .points-item {
+      @extend %background-b4s-white;
+      box-sizing: border-box;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 0 10px;
+      height: 10px;
+      opacity: .5;
+      width: 10px;      
+
+      &.active {
+        border-radius: 15px;
+        height: 15px;
+        width: 15px;
+        opacity: 1;
+      }
+    }
+  }
+
+  .carousel-slide {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    flex: 0 0 100%;
+    z-index: 0;
+    
+    .carousel-tile {      
+      box-sizing: border-box;
+      flex-direction: column;
+      margin: 0 auto;
+      max-width: 95%;
+      display: flex;
+      height: 100%;
+
+      .container {
+        &-content {
+          
+          .container-button { display: flex }
+
+          .text {
+            @extend %text-b4s-white;
+
+            &-extra { @include text-size("small") }
+            &-title { @include text-size("medium") }
+            &-subtitle { @include text-size("largest") }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@include respond-to("mobile") {
+  .carousel-component {
+    .carousel-slide {
+      min-height: calc(110vh - 90px); /* Screen Height - Bar Top Height */
+
+      .carousel-tile {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        .container {
+          &-content {
+            $margin: 25px;
+
+            .text { &:not(:first-of-type) { margin-top: $margin } }
+            .container-button {
+              justify-content: space-around;
+              margin-top: $margin;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include respond-to("tablet") {
+  .carousel-component {
+    .carousel-slide {
+      min-height: calc(125vh - 90px); /* Screen Height - Bar Top Height */
+
+      .carousel-tile {
+        justify-content: flex-end;
+        align-items: stretch;
+        padding-bottom: 15%;
+        text-align: left;
+
+        .container {
+          &-content {
+            $margin: 10px;
+
+            .text { &:not(:first-of-type) { margin-top: $margin } }
+            .container-button {
+              justify-content: flex-start;
+              margin-top: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include respond-to("desktop") {
+  .carousel-component {
+    .carousel-slide {
+      min-height: calc(100vh - 90px); /* Screen Height - Bar Top Height */
+    }
+  }
+}

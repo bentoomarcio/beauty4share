@@ -1,0 +1,10 @@
+@import './config';
+
+mat-sidenav-container { height: 100% }
+
+mat-sidenav, mat-sidenav-content { box-sizing: border-box; }
+
+mat-sidenav {
+  @extend %background-b4s-dark;
+  width: 200px;
+}

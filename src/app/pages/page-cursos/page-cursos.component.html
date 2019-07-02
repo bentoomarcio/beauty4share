@@ -1,0 +1,57 @@
+<section class="page-cursos-component" *ngIf="courseData">
+    <app-header></app-header>
+    <div class="row">
+      <div class="col-12">
+        <youtube-player class="container-youtube" *ngIf="courseData.video" [width]="'100%'" [height]="'600'" [videoId]="courseData.video"></youtube-player>
+        <div class="container-background" *ngIf="courseData.background" [ngStyle]="{ backgroundImage: 'url(' + courseData.background + ')'}"></div>
+        <div class="row">
+          <div class="col-11 col-center">
+            <div class="container-content" [ngClass]="{ 'space-top': (!courseData.video && !courseData.background) }">
+              <p class="text text-title" *ngIf="courseData.title"> {{ courseData.title }} </p>
+              <p class="text text-subtitle" *ngIf="courseData.subtitle"> {{ courseData.subtitle }} </p>
+              <div class="container-general">
+                <div class="container-description">
+                  <p class="text text-content space-between" *ngFor="let description of courseData.description"> {{ description }} </p>
+                </div>
+                <div class="container-teachers">
+                  <p class="text text-content" *ngIf="courseData.teachers"> <span class="text-bold">Professores:</span> {{ courseData.teachers }} </p>
+                </div>
+                <div class="container-disclaimers" *ngIf="courseData.disclaimer">
+                  <p class="text text-content" *ngFor="let disclaimer of courseData.disclaimer"> {{ disclaimer }} </p>
+                </div>
+              </div>
+              <p class="text text-title"> Conteúdo </p>
+              <div class="container-content" *ngIf="courseData.content">
+                <p class="text text-content" *ngFor="let content of courseData.content"> - {{ content }} </p>
+              </div>
+              <p class="text text-title">Datas e Horários</p>
+
+              <div class="condition-time" *ngIf="courseData.time">
+                  <div class="container-time" *ngFor="let time of courseData.time">
+                    <p class="text text-bold text-time-title"> {{ time.title }} </p>
+                    <p class="text text-content text-time-content"> {{ time.days }} </p>
+                    <p class="text text-content text-time-content"> {{ time.exception }} </p>
+                    <p class="text text-content text-time-content"> {{ time.schedule }} </p>
+                  </div>
+              </div>              
+
+              <p class="text text-title"> Valor e Formas de Pagamento </p>
+              <div class="container-value" *ngIf="courseData.payment">
+                <p class="text text-content" *ngIf="courseData.payment.value"> Valor: {{ courseData.payment.value }} </p>
+                <p class="text text-content" *ngIf="courseData.payment.installment"> {{ courseData.payment.installment }} </p>
+                <p class="text text-content" *ngIf="courseData.payment.cash"> {{ courseData.payment.cash }} </p>
+              </div>
+
+              <!-- <div class="container-button">
+                <app-button [icon]="'attach_money'" [route]="'#'" [text]="'COMPRAR CURSO'"></app-button>
+              </div> -->
+
+              <p class="text text-title margin-t40">Dúvidas?</p>
+              <p class="text text-medium margin-t30">Envie um e-mail para contato@beauty4share.com.br ou nos mande um WhatsApp: (11) 98882-6015.</p>
+            </div>            
+          </div>
+        </div>        
+      </div>
+    </div>
+</section>
+  <app-footer id="contato"></app-footer>

@@ -1,0 +1,28 @@
+$font-sizes: (
+  "regular": 1.10rem,
+  "medium": 1.25rem,
+  "large": 1.75rem,
+  "largest": 2rem,
+  "small": 1rem,
+  "big": 1.5rem
+);
+
+@each $size, $measure in $font-sizes {
+  .text-#{$size} { font-size: $measure }
+  %text-#{$size} { font-size: $measure }
+}
+
+@mixin text-size($size) {
+  @if map-has-key($map: $font-sizes, $key: $size) { font-size: map-get($map: $font-sizes, $key: $size) }
+}
+
+.text {
+  &-link { &:hover { text-decoration: underline } }
+  &-underline { text-decoration: underline }
+  &-nolink { text-decoration: none }
+  &-center { text-align: center }
+  &-italic { font-style: italic }
+  &-right { text-align: right }
+  &-bold { font-weight: bold }
+  &-left { text-align: left }
+}

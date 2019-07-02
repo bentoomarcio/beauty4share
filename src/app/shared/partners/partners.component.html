@@ -1,0 +1,5 @@
+<section class="partners-component" *ngIf="partners">  
+  <div class="container-logo" *ngFor="let partner of partners; let index = index">
+      <img class="image" [src]="partner.image" alt="Parceiro">
+  </div>
+</section>

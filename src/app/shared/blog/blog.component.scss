@@ -1,0 +1,7 @@
+@import "../../assets/scss/config";
+
+.blog-component { 
+  @extend %background-b4s-gray;
+  box-sizing: border-box;
+  padding: 20px 0;
+}

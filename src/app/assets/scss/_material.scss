@@ -1,0 +1,19 @@
+@import '../scss/config';
+
+.mat-form-field-type-mat-input.mat-form-field-appearance-outline {
+  box-sizing: border-box;
+  background-color: #FFF;
+  padding: 10px 0;
+  cursor: text;
+  width: 100%;
+
+  &.mat-focused {
+    .mat-form-field-label {  @extend %text-b4s-pink }
+  }
+  .mat-form-field-wrapper {
+    padding-bottom: 0
+  }
+}
+
+.mat-form-field-outline.mat-form-field-outline-thick,
+.mat-form-field-outline { color: transparent !important }

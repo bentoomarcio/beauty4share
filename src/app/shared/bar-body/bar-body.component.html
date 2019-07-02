@@ -1,0 +1,8 @@
+<section class="component-bar-body" [class.inverted]="style === 'inverted'">
+  <div class="row">
+    <div class="col-l6 col-m6 col-s12 col-center text-center">
+      <img [ngStyle]="{ maxWidth: maxWidth + 'px'}" *ngIf="image" [src]="image" alt="Categoria">
+      <p *ngIf="text" class="text-large"> {{ text.toUpperCase() }} </p>
+    </div>
+  </div>  
+</section>

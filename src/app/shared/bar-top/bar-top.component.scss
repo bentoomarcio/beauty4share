@@ -1,0 +1,48 @@
+@import '../../assets/scss/config';
+
+.component-bar-top {  
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff0042+0,949494+50,949494+50,fe0148+100 */
+  background: linear-gradient(to right, #ff0042 0%,#949494 50%,#949494 50%,#fe0148 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -webkit-linear-gradient(left, #ff0042 0%,#949494 50%,#949494 50%,#fe0148 100%); /* Chrome10-25,Safari5.1-6 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0042', endColorstr='#fe0148',GradientType=1 ); /* IE6-9 */
+  background: -moz-linear-gradient(left, #ff0042 0%, #949494 50%, #949494 50%, #fe0148 100%); /* FF3.6-15 */  
+  
+  box-sizing: border-box;
+  align-items: center;
+  min-height: 90px;
+  padding: 20px 0;
+  display: flex;
+  
+  .bar-link {
+    @extend %text-b4s-white;
+    
+    text-decoration: none;
+    display: inline-block;      
+  }
+
+}
+
+@include respond-to("mobile") {
+  .component-bar-top {
+    .bar-link {
+      .bar-text { @include text-size("small") }
+    }
+  }
+}
+
+@include respond-to("tablet") {
+  .component-bar-top {
+    .bar-link {
+      .bar-text { @include text-size("medium") }
+    }
+  }
+}
+
+@include respond-to("desktop") {
+  .component-bar-top {
+    .bar-link {
+      .bar-text { @include text-size("large") }
+    }
+  }
+}

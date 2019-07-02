@@ -1,0 +1,67 @@
+@import './mixins';
+
+$grid-columns: 12;
+$grid-gutter: 0;
+
+.row {
+    
+  align-items: center;
+  flex-wrap: wrap;
+  display: flex;
+  width: 100%;
+
+  .col {
+    &-right { margin-left: auto; }
+    &-left { margin-right: auto; }
+    &-center { margin: 0 auto; }
+    flex: 1;
+  }
+
+  .float {
+    &-right { float: right; }
+    &-left { float: left; }
+  }
+  
+  
+  [class*="col-"] {
+    padding: 0 $grid-gutter;
+    box-sizing: border-box;
+  }
+
+  @for $i from 1 through $grid-columns {
+    @media screen and (min-width: map-get($map: $breakpoints, $key: "desktop")) { .col-l#{$i} { width: 100% / $grid-columns * $i }  }
+    @media screen and (min-width: map-get($map: $breakpoints, $key: "tablet")) and (max-width: map-get($map: $breakpoints, $key: "desktop") - 1) { .col-m#{$i} { width: 100% / $grid-columns * $i }  }
+    @media screen and (min-width: map-get($map: $breakpoints, $key: "mobile")) and (max-width: map-get($map: $breakpoints, $key: "tablet") - 1) { .col-s#{$i} { width: 100% / $grid-columns * $i }  }
+    .col-#{$i} { width: 100% / $grid-columns * $i }
+  }
+
+  @for $i from 1 through 10 {
+    .margin-t#{$i * 5} { margin-top: $i * 5px; }
+    .margin-r#{$i * 5} { margin-right: $i * 5px; }
+    .margin-l#{$i * 5} { margin-left: $i * 5px; }
+    
+    .margin-y#{$i * 5} {
+      margin-bottom: $i * 5px;
+      margin-top: $i * 5px;
+    }
+  }
+
+  &-between { justify-content: space-between }
+  &-around { justify-content: space-around }
+  
+  .hide {
+    
+    &-desktop {
+      @media screen and (min-width: map-get($map: $breakpoints, $key: "desktop")) { display: none }
+    }
+
+    &-tablet {
+      @media screen and (min-width: map-get($map: $breakpoints, $key: "tablet")) and (max-width: map-get($map: $breakpoints, $key: "desktop") - 1) { display: none }
+    }
+
+    &-mobile {
+      @media screen and (min-width: map-get($map: $breakpoints, $key: "mobile")) and (max-width: map-get($map: $breakpoints, $key: "tablet") - 1) { display: none }
+    }
+
+  }
+}

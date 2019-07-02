@@ -1,0 +1,23 @@
+@import '../../assets/scss/config';
+
+.page-professores-component {
+  @extend %background-b4s-gray;
+
+  .container-content {
+    margin-bottom: 40px;
+    margin-top: 40px;
+
+    .text {
+      &-content:not(:first-of-type) { margin-top: 15px }
+      &-content { line-height: 25px }
+      
+      &-profession {  margin: 10px 0 }
+    }
+  }
+
+  .container-image {
+    background-position: top center;
+    background-size: auto 100%;
+    min-height: 80vh;
+  }
+}

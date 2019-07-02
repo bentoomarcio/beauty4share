@@ -1,0 +1,68 @@
+<section class="page-blog-component" *ngIf="blogData">
+  <app-header></app-header>
+  <div class="row">
+    <div class="col-12">      
+      <div *ngIf="!blogData.background" class="container-image" [ngStyle]="{ backgroundImage: 'url(https://parsefiles.back4app.com/n0JAgSSzjFLdJv5RQN0NvKY72y9G9RkvMRPYg69o/a69f06e97f51282277fce8cd9e245ef9_background-materiais.jpg)'}">
+        <div class="row">
+          <div class="col-l3 col-m6 col-s12">
+            <img *ngIf="blogData.download" class="image" src="https://parsefiles.back4app.com/n0JAgSSzjFLdJv5RQN0NvKY72y9G9RkvMRPYg69o/bd90b54deb62ff67ee2f4b40ceac9fe0_Materiais.png" alt="Materiais">
+            <img *ngIf="!blogData.download" class="image" src="https://parsefiles.back4app.com/n0JAgSSzjFLdJv5RQN0NvKY72y9G9RkvMRPYg69o/da5258142d54e96791ee34877d174405_Blog.png" alt="Materiais">
+          </div>
+        </div>
+      </div>
+      
+      <div *ngIf="blogData.background" class="container-image" [ngStyle]="{ backgroundImage: 'url('+blogData.background+')'}">
+        <div class="row">
+          <div class="col-l3 col-m6 col-s12">
+            <img *ngIf="blogData.download" class="image" src="https://parsefiles.back4app.com/n0JAgSSzjFLdJv5RQN0NvKY72y9G9RkvMRPYg69o/bd90b54deb62ff67ee2f4b40ceac9fe0_Materiais.png" alt="Materiais">
+            <img *ngIf="!blogData.download" class="image" src="https://parsefiles.back4app.com/n0JAgSSzjFLdJv5RQN0NvKY72y9G9RkvMRPYg69o/da5258142d54e96791ee34877d174405_Blog.png" alt="Materiais">
+          </div>        
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-l9 col-m10 col-s11 col-center">
+          <div class="container-content text-b4s-white">
+              <p class="text text-category text-medium" *ngIf="blogData.category"> {{ blogData.category }} </p>
+              <p class="text text-title text-largest margin-t5" *ngIf="blogData.title"> {{ blogData.title }} </p>
+              <div class="row container-date">
+                <div class="col-l9 col-m9 col-s5">
+                  <p class="text text-date text-medium" *ngIf="blogData.date"> {{ blogData.date }} </p>
+                </div>
+                <div class="col-l2 col-m3 col-s7 col-right" *ngIf="blogData.link">
+                  <div class="row">
+                      <div class="text-center" *ngIf="blogData.link.facebook">
+                        <a [href]="blogData.link.facebook" target="_blank"> <img src="http://beauty4share.com.br/wp-content/themes/html5blank-stable/img/faceico.png" alt="faceb4s"> </a>
+                      </div>
+                      <div class="text-center" *ngIf="blogData.link.pinterest">
+                        <a [href]="blogData.link.pinterest" target="_blank"><img src="http://beauty4share.com.br/wp-content/themes/html5blank-stable/img/pinterestico.png" alt="pinterestb4s"></a>
+                      </div>
+                      <div class="text-center" *ngIf="blogData.link.twitter">
+                        <a [href]="blogData.link.twitter" target="_blank"><img src="http://beauty4share.com.br/wp-content/themes/html5blank-stable/img/instaico.png" alt="instab4s"></a>
+                      </div>
+                      <div class="text-center" *ngIf="blogData.link.youtube">
+                        <a [href]="blogData.link.youtube" target="_blank"><img src="http://beauty4share.com.br/wp-content/themes/html5blank-stable/img/ytico.png" alt="ytb4s"></a>
+                      </div>
+                  </div>
+                </div>
+              </div>        
+              <div class="image" *ngIf="blogData.internal" [ngStyle]="{ backgroundImage: 'url('+ blogData.internal +')'}"></div>
+              <div class="image" *ngIf="!blogData.internal && blogData.image" [ngStyle]="{ backgroundImage: 'url('+ blogData.image +')'}"></div>
+              <div class="container-button" *ngIf="blogData.download">
+                <app-button [icon]="'cloud_download'" [route]="blogData.download" [text]="'FAÇA O DOWNLOAD'"></app-button>
+              </div>
+              <div class="container-blog" *ngFor="let content of blogData.content">
+                <img class="image-blog" *ngIf="content.image" [src]="content.image" alt="Imagem">
+                <p class="text text-title text-large" *ngIf="content.title"> {{ content.title }} </p>
+                <p class="text text-subtitle text-medium text-bold" *ngIf="content.subtitle"> {{ content.subtitle }} </p>
+                <p class="text text-content text-small" *ngIf="content.text"> {{ content.text }} </p>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-bar-body [text]="'Você também pode gostar'"></app-bar-body>
+<app-blog></app-blog>
+<app-footer id="contato"></app-footer>

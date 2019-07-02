@@ -1,0 +1,24 @@
+@import '../../assets/scss/config';
+
+.component-bar-body {
+  @extend %text-b4s-white;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff0042+0,949494+100 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0042', endColorstr='#949494',GradientType=0 ); /* IE6-9 */
+  background: linear-gradient(to bottom, #ff0042 0%,#949494 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -webkit-linear-gradient(top, #ff0042 0%,#949494 100%); /* Chrome10-25,Safari5.1-6 */
+  background: -moz-linear-gradient(top, #ff0042 0%, #949494 100%); /* FF3.6-15 */
+
+  &.inverted {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff0042+0,949494+100 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#949494', endColorstr='#ff0042',GradientType=0 ); /* IE6-9 */
+  background: linear-gradient(to bottom, #737272 0%, #ff0042 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -webkit-linear-gradient(top, #737272 0%, #ff0042 100%); /* Chrome10-25,Safari5.1-6 */
+  background: -moz-linear-gradient(top, #737272 0%, #ff0042 100%); /* FF3.6-15 */
+  }
+  
+  align-items: center;
+  font-weight: bold;
+  min-height: 100px;  
+  display: flex;
+}

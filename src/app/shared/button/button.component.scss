@@ -1,0 +1,26 @@
+@import '../../assets/scss/config';
+
+.component-button {
+
+  .link-button {
+    @extend %text-b4s-white;
+
+    text-decoration: none;
+
+    .container-button {
+      @extend %border-b4s-white;
+
+      justify-content: space-between;
+      box-sizing: border-box;
+      display: inline-flex;
+      border-radius: 25px;
+      align-items: center;
+      font-weight: bold;
+      padding: 10px;
+
+      .text {
+        margin-left: 10px;
+      }
+    }
+  }
+}

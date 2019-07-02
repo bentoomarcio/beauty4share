@@ -1,0 +1,27 @@
+.teacher-box-component {
+  background-position: center;
+  justify-content: flex-end;
+  background-size: cover;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-bottom: 60px;
+  align-items: center;
+  min-height: 568px;
+  cursor: pointer;
+  display: flex;
+
+  .container {
+    &-text,
+    &-button { padding: 0 30px }
+    &-button { display: none }
+  }
+
+  &active,
+  &:hover {
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
+    .container {
+      &-button { display: block }
+      &-text { display: none }
+    }
+  }
+}

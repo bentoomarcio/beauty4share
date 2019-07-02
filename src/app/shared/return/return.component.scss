@@ -1,0 +1,30 @@
+@import '../../assets/scss/config';
+
+.return-component {
+  $size: 40px;
+
+  @extend %background-b4s-white;
+  border-radius: $size;
+  font-size: $size;
+  cursor: pointer;
+  position: fixed;
+  height: $size;
+  width: $size;
+  bottom: 15%;
+  right: 3.5%;
+  z-index: 2;
+
+  &:active,
+  &:hover {
+    @extend %background-b4s-dark;
+    @extend %text-b4s-white;
+  }
+
+  .container-icon {
+    .icon {
+      font-size: $size;
+      height: $size;
+      width: $size;
+    }
+  }
+}

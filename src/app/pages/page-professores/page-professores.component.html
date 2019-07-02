@@ -1,0 +1,42 @@
+<section class="page-professores-component" *ngIf="teacherData">
+    <app-header></app-header>
+    <div class="row">
+      <div class="col-12 col-center text-b4s-white">
+        <div class="row">
+          <div class="col-12">
+              <div class="container-image" *ngIf="teacherData.image" [ngStyle]="{ backgroundImage: 'url(' + teacherData.image + ')'}"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-l11 col-m11 col-s11 col-center container-content">
+            <p class="text-large" *ngIf="teacherData.instagram">{{ teacherData.instagram }}</p>
+            <p class="text text-profession text-medium text-italic" *ngIf="teacherData.profession">{{ teacherData.profession }}</p>
+            <hr class="margin-t30">
+            <div class="row">
+              <div class="col-s8">
+                <div class="row">
+                  <div *ngIf="teacherData.link.facebook">
+                    <a [href]="teacherData.link.facebook" target="_blank"> <img src="http://beauty4share.com.br/wp-content/themes/html5blank-stable/img/faceico.png" alt="faceb4s"> </a>
+                  </div>
+                  <div *ngIf="teacherData.link.pinterest">
+                    <a [href]="teacherData.link.pinterest" target="_blank"><img src="http://beauty4share.com.br/wp-content/themes/html5blank-stable/img/pinterestico.png" alt="pinterestb4s"></a>
+                  </div>
+                  <div *ngIf="teacherData.link.instagram">
+                    <a [href]="teacherData.link.instagram" target="_blank"><img src="http://beauty4share.com.br/wp-content/themes/html5blank-stable/img/instaico.png" alt="instab4s"></a>
+                  </div>
+                  <div *ngIf="teacherData.link.youtube">
+                    <a [href]="teacherData.link.youtube" target="_blank"><img src="http://beauty4share.com.br/wp-content/themes/html5blank-stable/img/ytico.png" alt="ytb4s"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="container-text margin-t30" *ngIf="teacherData.content">
+              <p class="text-small text text-content" *ngFor="let content of teacherData.content"> {{ content }} </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+  <app-footer id="contato"></app-footer>

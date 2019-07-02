@@ -1,0 +1,13 @@
+<section class="teacher-box-component" [ngStyle]="{ backgroundImage: 'url(' + background + ')'}">
+  <div class="row">
+    <div class="col-12">
+      <div class="container-text">
+        <p class="text text-instagram text-b4s-white text-large"> {{ instagram }} </p>
+        <p class="text text-profession text-b4s-white text-medium"><i>{{ profession }}</i></p>
+      </div>
+      <div class="container-button">
+        <app-button [icon]="'add_circle_outline'" [route]="'#'" [text]="'BIOGRAFIA'"></app-button>
+      </div>
+    </div>
+  </div>
+</section>

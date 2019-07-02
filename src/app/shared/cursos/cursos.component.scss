@@ -1,0 +1,52 @@
+@import "../../assets/scss/config";
+
+.cursos-component { 
+  @extend %background-b4s-dark;
+
+  .carousel-container {
+    .carousel-controls {
+      position: absolute;
+      width: 100%;
+      top: calc(50% - 15px);
+
+      .button {
+        &-prev,
+        &-next {
+          @extend %text-b4s-white;
+          border: 1px solid map-get($map: $colors, $key: "b4s-white");
+          justify-content: space-around;
+          align-items: center;
+          border-radius: 30px;
+          position: absolute;
+          background: none;
+          cursor: pointer;
+          outline: none;
+          display: flex;
+          height: 30px;
+          width: 30px;
+        }
+
+        &-inactive { opacity: .5 }
+        &-next { right: 10px }
+        &-prev { left: 10px }
+      }
+    }
+  }
+}
+
+@include respond-to("desktop") {
+  
+  .cursos-component {
+    .carousel-container {
+      width: 100%;
+      .carousel-slide {
+        flex: 0 0 100%;        
+        .carousel-tile {
+          flex-wrap: wrap;
+          display: flex;
+        }
+      }      
+    }
+  }
+
+}

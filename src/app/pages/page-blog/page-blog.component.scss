@@ -1,0 +1,67 @@
+@import '../../assets/scss/config';
+
+.page-blog-component {
+  @extend %background-b4s-gray;
+  .image { max-width: 100% }
+  .container {
+    &-image {
+      background-position: top center;
+      background-repeat: no-repeat;
+      padding: 0 40px 100px 40px;
+      box-sizing: border-box;
+      background-size: cover;
+      align-items: flex-end;
+      min-height: 500px;
+      display: flex;
+      width: 100%;
+    }
+
+    &-date {
+      border-bottom: 3px solid map-get($map: $colors, $key: "b4s-white");
+      border-top: 3px solid map-get($map: $colors, $key: "b4s-white");
+      box-sizing: border-box;
+      min-height: 55px;
+      padding: 5px 0;
+      margin: 50px 0;
+    }
+
+    &-content {
+      margin: 40px 0;
+
+      .container {
+        &-button {
+          justify-content: space-around;
+          margin-top: 20px;
+          display: flex;
+          width: 100%;
+        }
+
+        &-blog {
+          flex-direction: column;
+          display: flex;
+
+          &:not(:first-of-type) { margin-top: 30px }
+          
+          .image-blog {
+            margin-bottom: 30px;
+            align-self: center;
+            max-width: 50%;
+          }
+
+          .text-content {
+            line-height: 25px;
+            margin-top: 10px;
+          }
+        }
+      }      
+
+      .image {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        min-height: 600px;
+        margin: 40px 0;
+      }      
+    }
+  }
+}

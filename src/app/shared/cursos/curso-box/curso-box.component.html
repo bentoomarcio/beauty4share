@@ -1,0 +1,14 @@
+<section class="curso-box-component" [ngStyle]="{ backgroundImage: 'url(' + background + ')'}">  
+  <div class="row">
+    <div class="container-content col-s12 col-m12 col-l12 col-left text-b4s-white">
+      <p class="text text-category text-small"> {{ category }} </p>
+      <p class="text text-title text-large"> {{ title }} </p>
+      <hr class="line">
+      <p class="text text-date text-small"> {{ date }} </p>
+    </div>
+    <div class="container-button">
+      <app-button [icon]="'add_circle_outline'" [route]="'#'" [text]="'SAIBA MAIS'"></app-button>
+    </div>
+  </div>
+  <div class="overlay"></div>
+</section>

@@ -1,0 +1,61 @@
+@import '../../../assets/scss/config';
+
+.blog-box-component {
+  @extend %text-b4s-white;
+  cursor: pointer;  
+
+  .container-content {
+    border-bottom: 3px solid map-get($map: $colors, $key: "b4s-white");
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+
+    &:hover {
+      .container {
+        &-image {
+          .container-overlay { display: flex }
+        }
+      }
+    }
+
+    .container {
+      &-image {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        min-height: 250px;
+
+        .container-overlay {
+          background: rgba(0, 0, 0, 0.5);
+          box-sizing: border-box;
+          align-items: flex-end;
+          padding-bottom: 20px;
+          position: absolute;
+          padding-left: 20px;
+          display: none;          
+          height: 100%;
+          width: 100%;
+          left: 0;
+          top: 0;
+        }
+      }
+
+      &-category { margin-top: 20px }
+      &-text { margin-top: 10px }
+    }
+  }
+
+}
+
+@include respond-to("tablet") {
+  .blog-box-component {
+    .container-content { margin-left: 6px }
+  }
+}
+
+@include respond-to("desktop") {
+  .blog-box-component {
+    .container-content { margin-left: 4% }
+  }
+}

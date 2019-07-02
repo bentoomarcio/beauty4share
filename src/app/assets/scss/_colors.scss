@@ -1,0 +1,29 @@
+$colors: (  
+  'b4s-darkest': #30000d,  
+  'b4s-dark': #5f0019,
+  'b4s-pink': #ff0042,
+  'b4s-gray': #737272,
+  'b4s-black': #000,
+  'b4s-white': #FFF
+);
+
+@each $name, $color in $colors {    
+
+  .text-#{$name} {
+    &:hover { color: $color; }
+    color: $color;
+  }
+
+  %border-#{$name} {
+    border: 3px solid $color;
+  }
+
+  %background-#{$name} {
+    background-color: $color;
+  }
+  
+  %text-#{$name} {
+    &:hover { color: $color; }
+    color: $color;
+  }
+}

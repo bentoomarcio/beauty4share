@@ -1,0 +1,8 @@
+// CONTAINER MAX-WIDTH
+  $max-width: 1366px;
+
+// SASS CONFIGURATION IMPORTS
+  @import 'helpers';
+  @import 'colors';  
+  @import 'mixins';
+  @import 'grid';

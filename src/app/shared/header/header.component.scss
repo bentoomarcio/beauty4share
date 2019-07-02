@@ -1,0 +1,93 @@
+@import '../../assets/scss/config';
+
+.header-component {
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  position: absolute;
+  margin-top: 20px;
+  min-height: 72px;
+  z-index: 9999;
+  width: 95%;
+  left: 50%;
+  top: 0;
+
+  .container {
+
+    &-show { flex: 1 }
+
+    &-links {
+      .link {
+        cursor: pointer;
+      }
+    }
+
+    &-logo {
+      .image-link { display: inline-block }
+    }
+
+  }
+}
+
+@include respond-to('mobile') {
+  .header-component {
+    .container {
+
+      &-menu {
+        .icon {
+          $size: 2.5rem;
+
+          font-size: $size;
+          cursor: pointer;
+          height: $size;
+          width: $size;
+        }
+      }
+  
+      &-logo {
+        .image-link {          
+          .image { width: 100% }
+        }
+      }
+  
+    }
+  }
+}
+
+@include respond-to('tablet') {
+  .header-component {
+    .container {
+
+      &-menu {
+
+        .icon {
+          $size: 3rem;
+          
+          font-size: $size;
+          height: $size;
+          width: $size;
+        }
+      }
+  
+      &-logo {
+        .image-link {          
+          .image { width: 100% }
+        }
+      }
+  
+    }
+  }
+}
+
+@include respond-to('desktop') {
+  .header-component {
+    .container {
+  
+      &-logo {
+        .image-link {          
+          .image { width: 70% }
+        }
+      }
+  
+    }
+  }
+}

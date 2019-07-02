@@ -1,0 +1,17 @@
+<section class="blog-box-component">
+  <div class="row">
+    <div class="container-content col-l11 col-m11 col-s11 col-center">
+      <div class="container-image" [style.backgroundImage]="'url(' + background + ')'">
+        <div class="container-overlay">
+          <app-button [icon]="'add_circle_outline'" [route]="'#'" [text]="'SAIBA MAIS'"></app-button>
+        </div>
+      </div>
+      <div class="container-category">
+        <p class="text text-small"> {{ category }} </p>
+      </div>
+      <div class="container-text">
+        <p class="text text-regular"> {{ title }}</p>
+      </div>
+    </div>
+  </div>  
+</section>

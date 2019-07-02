@@ -1,0 +1,19 @@
+  /* Font Import */
+    @import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
+
+  /* Angular Material Imports */
+    @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+  /* SCSS Imports */
+    @import 'app/assets/scss/_overrides';
+    @import 'app/assets/scss/material';
+    @import 'app/assets/scss/config';
+    @import 'app/assets/scss/reset';
+  
+  
+  /* HTML -- Font Setup */
+    html {
+      @extend %background-b4s-darkest;
+      font-family: 'Rajdhani';            
+      overflow: hidden;
+    }

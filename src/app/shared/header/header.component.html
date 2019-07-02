@@ -1,0 +1,86 @@
+<section class="header-component">
+  
+  <div class="row">
+    <div class="container-logo text-center col-l1 col-m2 col-s2">
+      <a class="image-link" href="/#/">
+        <img class="image" src="http://beauty4share.com.br/wp-content/themes/html5blank-stable/img/logo.png" alt="Logo Beauty4Share">
+      </a>
+    </div>
+
+    <div class="container-show">
+      <div [ngClass]="{ 'hide-desktop': !show }" class="container-menu col-m12 col-s12">
+        <div class="row">
+          <div class="col-4 col-right text-center" (click)="sidenav.toggleState()">
+              <mat-icon *ngIf="sidenav.state.getValue() === 'closed'" class="text-b4s-white icon">reorder</mat-icon>
+          </div>
+        </div>
+      </div>
+
+      <div [ngClass]="{ 'hide-desktop': show }" class="container-links hide-mobile hide-tablet col-l11">
+    
+        <div class="row">
+          
+            <div class="col-l8 col-center">
+                <div class="row row-around">
+                  
+                  <div class="col text-center">
+                    <a class="link text-bold text-link text-medium text-b4s-white" href="/#/">Beauty4Share</a>
+                  </div>
+      
+                  <div class="col text-center">
+                    <a class="link text-bold text-link text-medium text-b4s-white" href="/#/cursos-interno">Cursos</a>
+                  </div>
+      
+                  <div class="col text-center">
+                    <a class="link text-bold text-link text-medium text-b4s-white" href="/#/blog-interno">Blog</a>
+                  </div>
+      
+                  <div class="col text-center">
+                    <a class="link text-bold text-link text-medium text-b4s-white" href="/#/professores-interno">Profissionais</a>
+                  </div>
+                  
+                  <div class="col text-center">
+                    <a class="link text-bold text-link text-medium text-b4s-white" [ngx-scroll-to]="'#contato'">Contato</a>
+                  </div>
+                  
+                  <div class="col text-center">
+                    <a class="link text-bold text-link text-medium text-b4s-white" href="https://cursoonlinedemaquiagem.com.br/">Curso Online</a>
+                  </div>            
+                </div>
+              </div>
+        
+          <div class="col-l3">
+            <div class="row">
+              <div class="col-12 col-center text-center">
+                <div class="row">
+      
+                  <div class="col"> 
+                    <a href="https://www.facebook.com/Beauty4Share-853638298149617/" target="_blank"> <img src="http://beauty4share.com.br/wp-content/themes/html5blank-stable/img/faceico.png" alt="faceb4s"> </a>
+                  </div>
+          
+                  <div class="col">
+                    <a href="https://br.pinterest.com/beauty4share/" target="_blank"><img src="http://beauty4share.com.br/wp-content/themes/html5blank-stable/img/pinterestico.png" alt="pinterestb4s"></a>
+                  </div>
+          
+                  <div class="col">
+                    <a href="http://instagram.com/beauty_4_share" target="_blank"><img src="http://beauty4share.com.br/wp-content/themes/html5blank-stable/img/instaico.png" alt="instab4s"></a>
+                  </div>
+          
+                  <div class="col">
+                    <a href="https://www.youtube.com/channel/UCcv-WxQlKWUGCmWTK1d1TQA" target="_blank"><img src="http://beauty4share.com.br/wp-content/themes/html5blank-stable/img/ytico.png" alt="ytb4s"></a>
+                  </div>
+      
+                </div>
+              </div>
+              
+            </div>
+          </div>
+  
+        </div>
+  
+      </div>
+
+    </div>
+  </div>
+
+</section>

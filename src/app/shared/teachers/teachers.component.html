@@ -1,0 +1,29 @@
+<section class="teachers-component">
+  <div class="row">
+    <div class="container-teachers col-12" *ngIf="isMobile || route.url.indexOf('professores-interno') >= 0">
+      <div class="row">
+        <div (click)="changeTeacher($event)" *ngFor="let teacher of teachers; let index = index" class="col-s12 col-m6 col-l4" [attr.data-index]="index">      
+          <app-teacher-box [profession]="teacher.profession" [background]="teacher.image" [instagram]="teacher.instagram" [name]="teacher.name"></app-teacher-box>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="this.route.url.indexOf('professores') < 0 && isMobile" class="row margin-y30">
+      <div class="col text-center">
+        <app-button [icon]="'add_circle_outline'" [route]="'professores-interno'" [text]="'MAIS PROFESSORES'"></app-button>
+      </div>
+    </div>
+    <ngu-carousel class="carousel-container" *ngIf="array_carousel && !isMobile && route.url.indexOf('professores-interno') < 0" #carousel_view [inputs]="carousel_config" [dataSource]="array_carousel">
+      <div class="carousel-slide" *nguCarouselDef="let teacher; let index = index;">
+        <div class="carousel-tile">
+          <div class="container-content" (click)="changeTeacher($event)" [attr.data-index]="index">
+            <app-teacher-box [profession]="teacher.profession" [background]="teacher.image" [instagram]="teacher.instagram" [name]="teacher.name"></app-teacher-box>
+          </div>
+        </div>
+      </div>    
+      <ul class="carousel-controls" NguCarouselPoint>
+        <button [ngClass]="{ 'button-inactive': carousel_view.isFirst }" class="button button-prev" NguCarouselPrev> <mat-icon class="icon">chevron_left</mat-icon> </button>        
+        <button [ngClass]="{ 'button-inactive': carousel_view.isLast }" class="button button-next" NguCarouselNext> <mat-icon class="icon">chevron_right</mat-icon> </button>
+      </ul>
+    </ngu-carousel>
+  </div>
+</section>

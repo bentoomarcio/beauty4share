@@ -1,0 +1,95 @@
+@import 'assets/scss/sidenav';
+@import 'assets/scss/config';
+
+@if $max-width != 0 {
+  .app-container {
+    max-width: $max-width;
+    margin: 0 auto;
+  }  
+}
+
+.container-whatsapp {
+  position: fixed;
+  max-width: 50px;
+  z-index: 2;
+  bottom: 5%;
+  right: 3%;
+  
+  .image { max-width: 100% }
+}
+
+.custom-scrollbar {
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: auto;  
+  height: 100%;  
+  top: 0;
+}
+
+.app-container {
+
+  .container {
+    &-content { overflow: hidden }    
+
+    &-sidenav {      
+      box-sizing: border-box;
+      padding-top: 20px;
+      .container {
+        
+        &-text {
+          justify-content: space-around;
+          align-items: center;
+          max-width: 70%;
+          margin: 0 auto;
+          display: flex;
+          
+          .icon {
+            $size: 27px;
+            height: $size;
+            width: $size;
+          }
+        }
+
+        &-links {
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          height: 100%;
+
+          .links-item {
+            margin-top: 20px;
+            width: 75%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include respond-to("mobile") {
+  .custom-scrollbar {
+    --scrollbar-thumb-hover-color: transparent;
+    --scrollbar-container-color: transparent;
+    --scrollbar-color: transparent;
+    --scrollbar-thumb-color: trasparent;
+    --scroll-view-color: transparent;
+    --scrollbar-border-radius: 0;
+    --scroll-view-margin: 0;
+    --scrollbar-padding: 0;
+    --scrollbar-size: 0;
+  } 
+}
+
+@include respond-to("desktop") {
+  .custom-scrollbar {
+    --scrollbar-thumb-hover-color: #ff8fad;
+    --scrollbar-container-color: transparent;
+    --scrollbar-color: rgba(0, 0, 0, .5);
+    --scrollbar-thumb-color: #fc2760;
+    --scroll-view-color: transparent;
+    --scrollbar-border-radius: 4px;
+    --scrollbar-padding: 10px;
+    --scroll-view-margin: 0;
+    --scrollbar-size: 10px;
+  }
+}

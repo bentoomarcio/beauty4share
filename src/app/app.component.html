@@ -1,0 +1,44 @@
+<app-return *ngIf="return === 'visible'" (click)="resetReturn()"></app-return>
+
+<a href="https://web.whatsapp.com/send?phone=5511988826015&amp;text=Olá, quero saber maiores informações">
+  <div class="container-whatsapp">
+    <img class="image" src="https://parsefiles.back4app.com/n0JAgSSzjFLdJv5RQN0NvKY72y9G9RkvMRPYg69o/f5a64d423e2616885ab997849a8f6ee5_whatsapp.png" alt="WhatsApp">
+  </div>
+</a>
+
+<ng-scrollbar class="custom-scrollbar" #scrollbar>
+  <div class="app-container">  
+    <mat-sidenav-container>
+      <mat-sidenav class="container-sidenav" (closed)="closeSidenav()" [opened]="state === 'opened'" mode="over">
+        <div class="container-text">          
+          <h2 class="text text-title text-b4s-white text-large text-center">Conheça</h2>
+          <mat-icon class="icon text-b4s-white text-large text-center">add_circle</mat-icon>
+        </div>
+        <hr>
+        <ul class="container-links">
+          <li class="links-item">
+            <a class="text-b4s-white text-medium text-underline" (click)="sidenav.toggleState()" href="/#/">Beauty4Share</a>
+          </li>        
+          <li class="links-item">
+            <a class="text-b4s-white text-medium text-underline" (click)="sidenav.toggleState()" href="/#/professores-interno">Profissionais</a>
+          </li>
+          <li class="links-item">
+            <a class="text-b4s-white text-medium text-underline" (click)="sidenav.toggleState()" href="https://cursoonlinedemaquiagem.com.br/">Curso Online</a>
+          </li>
+          <li class="links-item">
+            <a class="text-b4s-white text-medium text-underline" (click)="sidenav.toggleState()" [ngx-scroll-to]="'contato'">Contato</a>
+          </li>
+          <li class="links-item">
+            <a class="text-b4s-white text-medium text-underline" (click)="sidenav.toggleState()" href="/#/cursos-interno">Cursos</a>
+          </li>
+          <li class="links-item">
+            <a class="text-b4s-white text-medium text-underline" (click)="sidenav.toggleState()" href="/#/blog-interno">Blog</a>
+          </li>                
+        </ul>
+      </mat-sidenav>    
+      <mat-sidenav-content class="container-content">      
+          <router-outlet></router-outlet>
+      </mat-sidenav-content>  
+    </mat-sidenav-container>
+  </div>
+</ng-scrollbar>
