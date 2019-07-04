@@ -10,8 +10,8 @@ export const environment = {
       js: "xCUrbQYyARuEp25imGL5wV7ebNAv15gOFcW7cKYx"
     },
     user: {
-      password: "!Flipsie3",
-      login: "Macronaut"
+      password: "melhorescola01",
+      login: "Beauty4Share"
     }
   }
 };
