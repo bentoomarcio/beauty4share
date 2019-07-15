@@ -19,7 +19,9 @@ const routes: Routes = [
   { path: 'professores', component: PageProfessoresComponent, pathMatch: 'full' },
   { path: 'cursos', component: PageCursosComponent, pathMatch: 'full' },
   { path: 'blog', component: PageBlogComponent, pathMatch: 'full' },
-  { path: '', component: HomeComponent, pathMatch: 'full' }
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: '404', component: HomeComponent},
+  { path: '**', redirectTo: '/404'}
 ];
 
 @NgModule({
